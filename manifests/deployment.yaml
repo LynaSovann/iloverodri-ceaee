@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iloverodri-ceaee-deployment
+  labels:
+    app: iloverodri-ceaee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iloverodri-ceaee
+  template:
+    metadata:
+      labels:
+        app: iloverodri-ceaee
+    spec:
+      containers:
+        - name: iloverodri-ceaee-container
+          image: pipejet/iloverodri-ceaee:latest
+          ports:
+            - containerPort: 3000
