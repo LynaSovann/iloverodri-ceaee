@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: iloverodri-ceaee-certificate
+  namespace: iloverodri-ceaee
+spec:
+  secretName: iloverodri-ceaee-secret-tls
+  commonName: thanak81-iloverodri.assessify.org
+  dnsNames:
+  - thanak81-iloverodri.assessify.org
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
